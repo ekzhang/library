@@ -118,5 +118,13 @@
   {
     "title": "Wavelet Tree for K-th Order Statistics",
     "name": "mkthnum.cpp"
+  },
+  {
+    "title": "Li-Chao Segment Tree",
+    "name": "li_chao.cpp"
+  },
+  {
+    "title": "Dynamic Li-Chao Segment Tree",
+    "name": "li_chao_dynamic.cpp"
   }
 ]
