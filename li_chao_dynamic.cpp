@@ -16,9 +16,7 @@ inline LL f(LL m, LL b, int x) {
 struct lc_node {
 	LL m = 0, b = INF;
 	lc_node *l = nullptr, *r = nullptr;
-	
-	lc_node() {}
-	lc_node(LL m, LL b) : m(m), b(b) {}
+
 	~lc_node() { delete l; delete r; }
 
 	void add_line(LL nm, LL nb, int lo=0, int hi=MAXLC) {
