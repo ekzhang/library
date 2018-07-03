@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Aho-Corasick Algorithm",
+    "name": "aho_corasick.cpp"
+  },
+  {
+    "title": "Convex Hull Trick",
+    "name": "convex_hull_trick.cpp"
+  },
+  {
+    "title": "Euler Tour",
+    "name": "euler_tour.cpp"
+  },
+  {
+    "title": "2D Sum Query with Fenwick Tree + Treap",
+    "name": "fentreap.cpp"
+  },
+  {
+    "title": "2D Fenwick Tree",
+    "name": "fenwick_2d.cpp"
+  },
+  {
+    "title": "Fast Fourier Transform",
+    "name": "fft.cpp"
+  },
+  {
+    "title": "Graham Scan for Convex Hull",
+    "name": "graham_scan.cpp"
+  },
+  {
+    "title": "String Hashing",
+    "name": "hashing.cpp"
+  },
+  {
+    "title": "Dynamic String Hashing",
+    "name": "hashing_bit.cpp"
+  },
+  {
+    "title": "Heavy-Light Decomposition + Euler Tour for Max Query",
+    "name": "hld_euler_max.cpp"
+  },
+  {
+    "title": "Heavy-Light Decomposition + Euler Tour for Sum Query",
+    "name": "hld_euler_sum.cpp"
+  },
+  {
+    "title": "Hopcroft-Karp Algorithm",
+    "name": "hopcroft_karp.cpp"
+  },
+  {
+    "title": "Link-Cut Tree",
+    "name": "lct.cpp"
+  },
+  {
+    "title": "Matrix",
+    "name": "matrix.cpp"
+  },
+  {
+    "title": "Dinic's Algorithm for Max Flow",
+    "name": "maxflow.cpp"
+  },
+  {
+    "title": "Dinic's Algorithm v2 (without unordered_map)",
+    "name": "maxflow2.cpp"
+  },
+  {
+    "title": "SSP with Potentials for Min Cost Max Flow",
+    "name": "mincost_maxflow.cpp"
+  },
+  {
+    "title": "2D Max Query with Segment Tree + Treap",
+    "name": "segtreap.cpp"
+  },
+  {
+    "title": "Segment Tree with Lazy Propagation",
+    "name": "segtree_lazy.cpp"
+  },
+  {
+    "title": "Persistent Segment Tree",
+    "name": "segtree_persistent.cpp"
+  },
+  {
+    "title": "Sparse 2D Segment Tree",
+    "name": "segtree_sparse.cpp"
+  },
+  {
+    "title": "Segment Tree",
+    "name": "segtree.cpp"
+  },
+  {
+    "title": "Shortest Path Faster Algorithm (SPFA)",
+    "name": "spfa.cpp"
+  },
+  {
+    "title": "Splay Tree",
+    "name": "splay_tree.cpp"
+  },
+  {
+    "title": "Suffix Array + LCP Array",
+    "name": "suffix_array.cpp"
+  },
+  {
+    "title": "Tarjan's Biconnected Components Algorithm",
+    "name": "tarjan_bcc.cpp"
+  },
+  {
+    "title": "Tarjan's Strongly Connected Components Algorithm",
+    "name": "tarjan_scc.cpp"
+  },
+  {
+    "title": "Treap",
+    "name": "treap.cpp"
+  },
+  {
+    "title": "Z Algorithm",
+    "name": "z_algorithm.cpp"
+  },
+  {
+    "title": "Wavelet Tree for K-th Order Statistics",
+    "name": "mkthnum.cpp"
+  }
+]
