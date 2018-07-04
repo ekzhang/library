@@ -27,12 +27,13 @@ void add_line(pll ln, int lo=0, int hi=MAXLC, int node=0) {
 	int mid = (lo + hi) / 2;
 	bool l = f(ln, lo) < f(line[node], lo);
 	bool m = f(ln, mid) < f(line[node], mid);
+	bool h = f(ln, hi) < f(line[node], hi);
 	if (m) swap(line[node], ln);
 	if (lo == hi || ln.second == INF)
 		return;
 	else if (l != m)
 		add_line(ln, lo, mid - 1, 2 * node + 1);
-	else
+	else if (h != m)
 		add_line(ln, mid + 1, hi, 2 * node + 2);
 }
 

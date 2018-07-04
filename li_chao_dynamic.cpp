@@ -23,6 +23,7 @@ struct lc_node {
 		int mid = (lo + hi) / 2;
 		bool bl = f(nm, nb, lo) < f(m, b, lo);
 		bool bm = f(nm, nb, mid) < f(m, b, mid);
+		bool bh = f(nm, nb, hi) < f(m, b, hi);
 		if (bm) {
 			swap(nm, m);
 			swap(nb, b);
@@ -33,7 +34,7 @@ struct lc_node {
 			if (!l) l = new lc_node;
 			l->add_line(nm, nb, lo, mid - 1);
 		}
-		else {
+		else if (bh != bm) {
 			if (!r) r = new lc_node;
 			r->add_line(nm, nb, mid + 1, hi);
 		}
