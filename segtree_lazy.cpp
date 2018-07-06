@@ -10,7 +10,7 @@ int N, Q;
 int st[MAXSEG];
 int lazy[MAXSEG];
 
-void push(int node, int lo, int hi) {
+void push(int lo, int hi, int node) {
 	if (lazy[node] == 0) return;
 	st[node] += (hi - lo + 1) * lazy[node];
 	if (lo != hi) {
@@ -22,11 +22,11 @@ void push(int node, int lo, int hi) {
 
 void update_range(int s, int e, int x, int lo=0, int hi=-1, int node=0) {
 	if (hi == -1) hi = N - 1;
-	push(node, lo, hi);
+	push(lo, hi, node);
 	if (hi < s || lo > e) return;
 	if (lo >= s && hi <= e) {
 		lazy[node] = x;
-		push(node, lo, hi);
+		push(lo, hi, node);
 		return;
 	}
 	int mid = (lo + hi) / 2;
@@ -37,7 +37,7 @@ void update_range(int s, int e, int x, int lo=0, int hi=-1, int node=0) {
 
 int query(int s, int e, int lo=0, int hi=-1, int node=0) {
 	if (hi == -1) hi = N - 1;
-	push(node, lo, hi);
+	push(lo, hi, node);
 	if (hi < s || lo > e) return 0;
 	if (lo >= s && hi <= e) return st[node];
 	int mid = (lo + hi) / 2;
