@@ -126,5 +126,9 @@
   {
     "title": "Dynamic Li-Chao Segment Tree",
     "name": "li_chao_dynamic.cpp"
+  },
+  {
+    "title": "Robust Random Number Generator",
+    "name": "rng.cpp"
   }
 ]
