@@ -130,5 +130,9 @@
   {
     "title": "Robust Random Number Generator",
     "name": "rng.cpp"
+  },
+  {
+    "title": "Area of Rectangle Union (2D Klee's Problem)",
+    "name": "rectangle_union.cpp"
   }
 ]
