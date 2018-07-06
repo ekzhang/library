@@ -39,18 +39,23 @@ vector<int> lcp_array(const vector<int>& sa, string S) {
 	vector<int> rank(N), lcp(N - 1);
 	for (int i = 0; i < N; i++)
 		rank[sa[i]] = i;
-	for (int i = 0, h = 0; i < N; i++) {
+
+	int pre = 0;
+	for (int i = 0; i < N; i++) {
 		if (rank[i] < N - 1) {
-			for (int j = sa[rank[i] + 1]; max(i, j) + h < S.size() && S[i + h] == S[j + h]; ++h);
-			lcp[rank[i]] = h;
-			if (h > 0) --h;
+			int j = sa[rank[i] + 1];
+			while (max(i, j) + pre < S.size() && S[i + pre] == S[j + pre])
+				++pre;
+			lcp[rank[i]] = pre;
+			if (pre > 0)
+				--pre;
 		}
 	}
 	return lcp;
 }
 
 int main() {
-	string S = "AGCGCCCTTGCGAGCAGTCGTATGCTTTCTCGAATTCCGAGCGGTTAAGCGTGAC";
+	const string S = "AGCGCCCTTGCGAGCAGTCGTATGCTTTCTCGAATTCCGAGCGGTTAAGCGTGAC";
 
 	vector<int> sa = suffix_array(S);
 	vector<int> lcp = lcp_array(sa, S);
