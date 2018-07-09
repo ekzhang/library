@@ -1,4 +1,4 @@
-// maxflow.cpp
+// maxflow2.cpp
 // Eric K. Zhang; Aug. 7, 2017
 
 #include <bits/stdc++.h>
