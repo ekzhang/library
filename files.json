@@ -138,5 +138,9 @@
   {
     "title": "Centroid Decomposition of a Tree",
     "name": "centroid_decomp.cpp"
+  },
+  {
+    "title": "Treap with Lazy Propagation",
+    "name": "treap_lazy.cpp"
   }
 ]
