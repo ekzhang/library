@@ -134,5 +134,9 @@
   {
     "title": "Area of Rectangle Union (2D Klee's Problem)",
     "name": "rectangle_union.cpp"
+  },
+  {
+    "title": "Centroid Decomposition of a Tree",
+    "name": "centroid_decomp.cpp"
   }
 ]
