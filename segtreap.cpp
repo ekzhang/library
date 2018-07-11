@@ -22,34 +22,20 @@ int mem = 0;
 tnode* st[MAXSEG];
 
 void split(tnode* t, tnode*& l, tnode*& r, int k) {
-	if (!t) {
-		l = r = nullptr;
-		return;
-	}
-	if (t->x < k) {
-		l = t;
-		split(t->r, t->r, r, k);
-	}
-	else {
-		r = t;
-		split(t->l, l, t->l, k);
-	}
+	if (!t) { l = r = nullptr; return; }
+	if (t->x < k)
+		l = t, split(t->r, t->r, r, k);
+	else
+		r = t, split(t->l, l, t->l, k);
 	t->update();
 }
 
 void merge(tnode*& t, tnode* l, tnode* r) {
-	if (!l || !r) {
-		t = l ? l : r;
-		return;
-	}
-	if (l->y < r->y) {
-		t = l;
-		merge(t->r, t->r, r);
-	}
-	else {
-		t = r;
-		merge(t->l, l, t->l);
-	}
+	if (!l || !r) { t = l ? l : r; return; }
+	if (l->y < r->y)
+		t = l, merge(t->r, t->r, r);
+	else
+		t = r, merge(t->l, l, t->l);
 	t->update();
 }
 
