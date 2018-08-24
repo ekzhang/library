@@ -70,7 +70,7 @@ struct node {
 		for (node* v = this; v; v = v->p) {
 			v->splay();
 			v->c[1] = pre;
-			update();
+			v->update();
 			pre = v;
 		}
 		splay();
