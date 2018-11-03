@@ -142,5 +142,9 @@
   {
     "title": "Treap with Lazy Propagation",
     "name": "treap_lazy.cpp"
+  },
+  {
+    "title": "Finite Field Operations (Mod P)",
+    "name": "finite_field.cpp"
   }
 ]
