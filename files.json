@@ -146,5 +146,9 @@
   {
     "title": "Finite Field Operations (Mod P)",
     "name": "finite_field.cpp"
+  },
+  {
+    "title": "Knuth–Morris–Pratt Algorithm (KMP)",
+    "name": "kmp.cpp"
   }
 ]
