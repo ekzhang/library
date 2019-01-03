@@ -17,19 +17,17 @@ class max_flow {
 	struct edge {
 		int t, rev;
 		T cap, f;
-		edge(int t, int r, T c, T f) : t(t), rev(r), cap(c), f(f) { }
 	};
 
 	vector<edge> adj[V];
 	int dist[V];
 	int ptr[V];
 
-	void bfs(int s) {
+	bool bfs(int s, int t) {
 		memset(dist, -1, sizeof dist);
 		dist[s] = 0;
-		queue<int> q;
-		q.push(s);
-		while (!q.empty()) {
+		queue<int> q({ s });
+		while (!q.empty() && dist[t] == -1) {
 			int n = q.front();
 			q.pop();
 			for (auto& e : adj[n]) {
@@ -39,18 +37,19 @@ class max_flow {
 				}
 			}
 		}
+		return dist[t] != -1;
 	}
 
 	T augment(int n, T amt, int t) {
 		if (n == t) return amt;
-		while (ptr[n] != adj[n].size()) {
-			auto& e = adj[n][ptr[n]++];
-			int v = e.t;
-			if (dist[v] == dist[n] + 1 && e.cap != e.f) {
-				T flow = augment(v, min(amt, e.cap - e.f), t);
+		int sz = adj[n].size
+		for (; ptr[n] < adj[n].size(); ptr[n]++) {
+			edge& e = adj[n][ptr[n]];
+			if (dist[e.t] == dist[n] + 1 && e.cap != e.f) {
+				T flow = augment(e.t, min(amt, e.cap - e.f), t);
 				if (flow != 0) {
 					e.f += flow;
-					adj[v][e.rev].f -= flow;
+					adj[e.t][e.rev].f -= flow;
 					return flow;
 				}
 			}
@@ -59,30 +58,24 @@ class max_flow {
 	}
 
 public:
-	void add(int u, int v, T cap=1) {
-		adj[u].emplace_back(v, adj[v].size(), cap, 0);
-		adj[v].emplace_back(u, adj[u].size() - 1, 0, 0);
+	void add(int u, int v, T cap=1, T rcap=0) {
+		adj[u].push_back({ v, adj[v].size(), cap, 0 });
+		adj[v].push_back({ u, adj[u].size() - 1, rcap, 0 });
 	}
 
 	T calc(int s, int t) {
 		T flow = 0;
-		while (true) {
-			bfs(s);
-			if (dist[t] == -1) break;
+		while (bfs(s, t)) {
 			memset(ptr, 0, sizeof ptr);
-			while (true) {
-				T df = augment(s, INF, t);
-				if (!df) break;
+			while (T df = augment(s, INF, t))
 				flow += df;
-			}
 		}
 		return flow;
 	}
 
 	void clear() {
-		for (int i = 0; i < V; i++) {
-			adj[i].clear();
-		}
+		for (int n = 0; n < V; n++)
+			adj[n].clear();
 	}
 };
 
