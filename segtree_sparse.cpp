@@ -57,8 +57,8 @@ LL query(int s, int e, int s2, int e2, int lo=0, int hi=-1, int node=0) {
 	if (hi < s || lo > e) return 0;
 	if (s <= lo && hi <= e) return query2(st[node], s2, e2);
 	int mid = (lo + hi) / 2;
-	return query(s, s2, e, e2, lo, mid, 2 * node + 1)
-			+ query(s, s2, e, e2, mid + 1, hi, 2 * node + 2);
+	return query(s, e, s2, e2, lo, mid, 2 * node + 1)
+			+ query(s, e, s2, e2, mid + 1, hi, 2 * node + 2);
 }
 
 int main() {
