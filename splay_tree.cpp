@@ -40,7 +40,6 @@ struct node {
 		}
 		if (!r())
 			rot();
-		push();
 	}
 } verts[100013];
 int t = 0;
