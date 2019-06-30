@@ -42,7 +42,6 @@ class max_flow {
 
 	T augment(int n, T amt, int t) {
 		if (n == t) return amt;
-		int sz = adj[n].size
 		for (; ptr[n] < adj[n].size(); ptr[n]++) {
 			edge& e = adj[n][ptr[n]];
 			if (dist[e.t] == dist[n] + 1 && e.cap != e.f) {
