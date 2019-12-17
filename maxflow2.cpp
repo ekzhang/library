@@ -58,8 +58,8 @@ class max_flow {
 
 public:
 	void add(int u, int v, T cap=1, T rcap=0) {
-		adj[u].push_back({ v, adj[v].size(), cap, 0 });
-		adj[v].push_back({ u, adj[u].size() - 1, rcap, 0 });
+		adj[u].push_back({ v, (int) adj[v].size(), cap, 0 });
+		adj[v].push_back({ u, (int) adj[u].size() - 1, rcap, 0 });
 	}
 
 	T calc(int s, int t) {

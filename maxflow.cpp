@@ -9,6 +9,8 @@ using namespace std;
  *   - O(V^2 E) for general graphs, but in practice ~O(E^1.5)
  *   - O(V^(1/2) E) for bipartite matching
  *   - O(min(V^(2/3), E^(1/2)) E) for unit capacity graphs
+ * 
+ * WARNING: prefer maxflow2.cpp when possible (which is faster)
  */
 template<int V, class T=long long>
 class max_flow {

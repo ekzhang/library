@@ -15,7 +15,7 @@ struct tnode {
 	int sz;
 
 	tnode() { update(); }
-	
+
 	void update() {
 		sz = 1 + (l ? l->sz : 0) + (r ? r->sz : 0);
 	}
