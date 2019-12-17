@@ -12,7 +12,7 @@ using namespace std;
  */
 template<int V, class T=long long>
 class mcmf {
-	/* making this static breaks compilation on -O0, but not on -O2; possible bug in GCC */
+	/* making this static breaks compilation on -O0, but not on -O2; unsure why */
 	const T INF = numeric_limits<T>::max();
 
 	struct edge {
@@ -86,8 +86,6 @@ class mcmf {
 	}
 
 public:
-	unordered_map<int, T> flows[V];
-
 	void add(int u, int v, T cap=1, T cost=0) {
 		adj[u].push_back({ v, (int) adj[v].size(), cap, cost, 0 });
 		adj[v].push_back({ u, (int) adj[u].size() - 1, 0, -cost, 0 });
@@ -144,13 +142,5 @@ int main() {
 
 	/* Max-flow should be 80, and min-cost should be 2500. */
 	cout << flow << ' ' << cost << endl;
-	for (int i = 0; i < 4; i++) {
-		for (auto p : network.flows[i]) {
-			if (p.second > 0) {
-				cout << "Flow " << i << "->" << p.first << ": " << p.second << endl;
-			}
-		}
-	}
-
 	return 0;
 }
