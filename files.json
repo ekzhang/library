@@ -150,5 +150,9 @@
   {
     "title": "Knuth–Morris–Pratt Algorithm (KMP)",
     "name": "kmp.cpp"
+  },
+  {
+    "title": "Modified Kinetic Tournament",
+    "name": "kinetic_tournament.cpp"
   }
 ]
