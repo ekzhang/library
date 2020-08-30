@@ -1,8 +1,8 @@
 // kinetic_tournament.cpp
 // Eric K. Zhang; Aug. 29, 2020
 //
-// This is an implementation of a _modified kinetic tournament_, originally
-// introduced by Daniel Zhang in this Codeforces blog comment:
+// This is an implementation of a _kinetic tournament_, which I originally
+// learned about from Daniel Zhang in this Codeforces blog comment:
 // https://codeforces.com/blog/entry/68534#comment-530381
 //
 // The functionality of the data structure is a mix between a line container,
@@ -39,7 +39,7 @@
 //
 //   - query: O(log n)
 //   - update: O(log n)
-//   - heaten: O(log^3 n)  [amortized]
+//   - heaten: O(log^2 n)  [amortized]
 //
 // Verification: FBHC 2020, Round 2, Problem D "Log Drivin' Hirin'"
 
