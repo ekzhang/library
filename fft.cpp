@@ -80,17 +80,18 @@ poly pmul(poly p, poly q) {
 }
 
 poly ppow(poly p, int k, int mod) {
-	if (k == 0) return {1};
-	poly q = pmul(p, p);
-	for (int& c : q)
-		c %= mod;
-	q = ppow(q, k >> 1, mod);
-	if (k % 2) {
-		q = pmul(q, p);
-		for (int& c : q)
+	poly ret = {1};
+	for (int i = 0; (1 << i) <= k; i++) {
+		if (k & (1 << i)) {
+			ret = pmul(ret, p);
+			for (int& c : ret)
+				c %= mod;
+		}
+		p = pmul(p, p);
+		for (int& c : p)
 			c %= mod;
 	}
-	return q;
+	return ret;
 }
 
 string pprint(poly p) {
